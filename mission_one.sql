@@ -1,3 +1,4 @@
+-- 課題1
 SELECT *
 FROM users
 WHERE name = "佐久間"

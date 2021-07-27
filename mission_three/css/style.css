@@ -21,6 +21,10 @@ h1 {
           align-items: center;
 }
 
+.op {
+  display: none;
+}
+
 .task {
   width: 384px;
   height: 43px;
@@ -102,7 +106,7 @@ h1 {
   border-bottom-right-radius: .25rem;
 }
 
-.delete {
+.zero {
   color: #a0aec0;
   padding-left: 1rem;
   padding-right: 1rem;

@@ -1,6 +1,11 @@
 -- 課題1
-SELECT *
+SELECT id,name,gender,birthday,GROUP_CONCAT(user_labels.label_id) AS label_ids
 FROM users
-WHERE name = "佐久間"
-WHERE birthday = "6/1/1900"
-WHERE gender = "male";
+INNER JOIN user_labels
+ON id = user_labels.user_id
+WHERE gender = 'male'
+GROUP BY id, name, gender, birthday
+
+-- 課題2
+SELECT *
+FROM staffs

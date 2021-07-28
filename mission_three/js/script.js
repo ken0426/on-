@@ -74,10 +74,6 @@ window.addEventListener('load',()=>{
   });
   })
 
-
-
-
-
   let plus = document.getElementsByClassName("plus");
   plus[c.length].addEventListener('click',()=>{
     text_lg[c.length].innerHTML++;

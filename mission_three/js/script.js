@@ -1,63 +1,141 @@
 window.addEventListener('load',()=>{
-  // const puls = document.getElementById("plus");
-  const plus = document.getElementsByClassName("plus");
-  // const minus = document.getElementById("minus");
-  const minus = document.getElementsByClassName("minus");
-  const zero = document.getElementsByClassName("zero");
+  let app = document.getElementsByClassName("app");
+  let op = document.getElementsByClassName("op");
   let text_lg = document.getElementsByClassName("text-lg");
-  const sum_zero = document.getElementsByClassName("sum-zero");
-  const text_sum = document.getElementsByClassName("text-sum");
-  const new_task = document.getElementById("new-task");
-  const center = document.getElementById("center");
-  const app = document.getElementsByClassName("app");
+  const btn = document.getElementById("new-task");
+  let text_sum = document.getElementById("text-sum");
+  let text = document.getElementsByClassName("text");
+  let new_text = document.getElementsByClassName("new-text");
+  let new_text_span = document.getElementsByClassName("new_text_span");
+  
+  
+  let c = [];
+  text[c.length].addEventListener('input',()=>{
+    new_text[c.length].innerHTML = text[c.length].value;
+    let newText = document.getElementsByClassName("new-text");
+    let newTextNone = document.createTextNode(", ");
+    newText(text)[c.length].appendChild(newTextNone)
+  });
+
+  let b = [];
+  let d = [0];
+  btn.addEventListener('click',()=>{
+    op[b.length].style.display ="block";
+    clone_element = op[b.length].cloneNode(true);
+    let n = b.length;
 
 
 
-  for(let i = 0; i < plus.length; i++){
-    for(let i = 0; i < plus.length; i++){
-      plus[i].addEventListener('click',()=>{
-        text_lg[i].innerHTML++;
-      });
-    }
+
+    //   let newElement_s = document.createElement("span");
+    // let newTextNone = document.createTextNode(", ");
+    // newElement_s.appendChild(newTextNone);
+    // newElement_s.setAttribute("class", "new_text_span");
+    // let title = document.getElementById("title");
+    // title.appendChild(newElement_s);
+    // let w = n - 1;
+    //   new_text_span[w].remove();
 
 
-    for(let i = 0; i < minus.length; i++){
-      minus[i].addEventListener('click',()=>{
-        if(text_lg[i].innerHTML > 0)
-        text_lg[i].innerHTML--;
-      });
-    }
+    let newElement_s = document.createElement("span");
+    let newTextNone = document.createTextNode(", ");
+    newElement_s.appendChild(newTextNone);
+    newElement_s.setAttribute("class", "new_text_span");
+    let title = document.getElementById("title");
+    title.appendChild(newElement_s);
 
-    for(let i = 0; i < sum_zero.length; i++){
-      sum_zero[i].addEventListener('click',()=>{
-        text_lg[i].innerHTML = 0;
-      })
-    }
+let newElement = document.createElement("span");
+  let newContent = document.createTextNode("new");
+  newElement.appendChild(newContent);
+  newElement.setAttribute("class", "new-text");
+  // let title = document.getElementById("title");
+  title.appendChild(newElement);
 
-    for(let i = 0; i<zero.length; i++){
-      zero[i].addEventListener('click',()=>{
-        for(let i = 0; i<app.length; i++){
-          if(app.length > 1){
-            app[i].remove();
-          }else{
-            app[0].style.display ="none";
-            text_lg[i].innerHTML = 0;
-          }
-        }
-      })
-    }
-  }
-  new_task.addEventListener('click',()=>{
-      clone_element = app[0].cloneNode(true);
-      if(app.length =! 0){
-        app[0].style.display ="block";
-        // app[i].remove();
-      }
-      app[0].after(clone_element);
-      for(let i = 1; i <text_lg.length; i++){
-        text_lg[i].innerHTML = 0;
-      }
+  
+
+    // let newText = document.getElementsByClassName("new-text");
+      // let newTextNone = document.createTextNode(", ");
+      // newText[n].appendChild(newTextNone);
+
+    
+    // clone_element = app[n].cloneNode(true);
+    sum = app[n].after(clone_element);
+    op[d.length].style.display ="none";
+    b.push(sum);
+    d.push(0);
+    n = b.length;
+    minus[n].addEventListener('click',()=>{
+      if(text_lg[n].innerHTML > 0)
+      text_lg[n].innerHTML--&&text_sum.innerHTML--;;
+    });
+    plus[n].addEventListener('click',()=>{
+      text_lg[n].innerHTML++;
+      text_sum.innerHTML++;
+    });
+
+    let sum_zero = document.getElementsByClassName("sum-zero");
+    sum_zero[n].addEventListener('click',()=>{
+      text_sum.innerHTML = text_sum.innerHTML - text_lg[n].innerHTML;
+      text_lg[n].innerHTML = 0;
+    });
+
+    // let u = new_text[n].remove();
+    //   let w = n - 1;
+    //   let y = new_text_span[w].remove();
+
+    zero[n].addEventListener('click',()=>{
+      b.pop();
+      d.pop();
+      app[n].style.display ="none";
+      text_sum.innerHTML = text_sum.innerHTML - text_lg[n].innerHTML;
+      text_lg[n].innerHTML = 0;
+      new_text[n].remove();
+      let w = n - 1;
+      new_text_span[w].remove();
+    });
+
+    text[n].addEventListener('input',()=>{
+      new_text[n].innerHTML = text[n].value;
+        // let newTextNone = document.createTextNode(", ");
+        // newText[n].appendChild(newTextNone);
+        
+    });
     })
 
 
-});
+    
+
+
+    let plus = document.getElementsByClassName("plus");
+    // let text_lg = document.getElementsByClassName("text-lg");
+    
+    plus[c.length].addEventListener('click',()=>{
+      text_lg[c.length].innerHTML++;
+      text_sum.innerHTML++;
+    });
+
+    let minus = document.getElementsByClassName("minus");
+    minus[c.length].addEventListener('click',()=>{
+      if(text_lg[c.length].innerHTML > 0)
+        text_lg[c.length].innerHTML--&&text_sum.innerHTML--;});
+
+
+
+    let sum_zero = document.getElementsByClassName("sum-zero");
+    sum_zero[c.length].addEventListener('click',()=>{
+      
+      text_sum.innerHTML = text_sum.innerHTML - text_lg[c.length].innerHTML;
+      text_lg[c.length].innerHTML = 0;
+    });
+
+    let zero = document.getElementsByClassName("zero");
+    zero[c.length].addEventListener('click',()=>{
+      app[c.length].style.display= "none";
+      text_sum.innerHTML = text_sum.innerHTML - text_lg[c.length].innerHTML;
+      new_text[c.length].innerHTML ="";
+    });
+
+
+    
+
+  })
